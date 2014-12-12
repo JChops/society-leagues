@@ -1,4 +1,4 @@
-FROM dougefresh/society-base
+FROM dougefresh/society-base:php
 
 MAINTAINER Douglas Chimento "dchimento@gmail.com"
 
