@@ -150,6 +150,19 @@ h2.form-signin-heading {
 #custom-bootstrap-menu.navbar-default .navbar-toggle:focus .icon-bar {
     background-color: #8a1e1b;
 }
+.account-wrapper {
+	padding: 0px 0px;
+	margin-top: 10px;
+	max-width: 1000px;
+}
+.account-wrapper ul {
+	float: right;
+}
+.account-wrapper .user-options li {
+	float: left;
+	list-style-type:none;
+	margin: 0px 0px 0px 20px;
+}
 @media (min-width: 768px) 
 {
 .navbar-wrapper {

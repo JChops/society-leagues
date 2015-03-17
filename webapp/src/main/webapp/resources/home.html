@@ -17,11 +17,6 @@
 
 <body id="leagueApp" ng-controller="HomeCtrl">
 
-<div class="please-wait-dialog" ng-hide="vm.appReady">
-    <img class="please-wait-spinner" src="/resources/img/loading.gif">
-</div>
-
-
 <div class="navbar-wrapper">
       <div class="container">
 
@@ -55,24 +50,20 @@
     </div><!-- end navbar-wrapper -->
     </div><!-- end container -->
     
-
-  <div class="container">
-
+  <div class="container account-wrapper">
   
-                <ul>
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#requestChallenge">Request Challenge</a></li>
-                    <li><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <a href="#contact">{{vm.userName}}</a></li>
-                    <li><a ng-click="logout()" href="/logout">Logout </a></li>
-                </ul>
-     
-            <!--/.nav-collapse -->
+  <nav>
+ 
+    <ul class="user-options">
+        <li class="active"><a href="#"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a></li>
+        <li><a href="#requestChallenge"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Requests <span class="badge">5</span></a></li>
+        <li><a href="#contact"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> {{vm.userName}}</a></li>
+        <li><a ng-click="logout()" href="/logout"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Logout </a></li>
+    </ul>
 
-  </div>
+	</nav>
+  </div><!-- end container -->
 
-<button type="button" class="btn btn-default" aria-label="Left Align">
-  <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> <a href="#requestChallenge">Request Challenge</a>
-</button>
 <header ng-class="{'app-ready': vm.appReady}"></header>
 
 <main class="container not-ready" ng-class="{'app-ready': vm.appReady}" ng-cloak>
@@ -85,6 +76,16 @@
             <div ng-repeat="info in vm.infoMessages">{{info.description}}</div>
         </div>
     </div>
+    
+<div class="please-wait-dialog" ng-hide="vm.appReady">
+    <img class="please-wait-spinner" src="/resources/img/loading.gif">
+</div>
+
+
+<button type="button" class="btn btn-default" aria-label="Left Align">
+  <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> <a href="#requestChallenge">Request Challenge</a>
+</button>
+
 
     <div class="container">
 
