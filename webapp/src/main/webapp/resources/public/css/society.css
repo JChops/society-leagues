@@ -155,13 +155,24 @@ h2.form-signin-heading {
 	margin-top: 10px;
 	max-width: 1000px;
 }
-.account-wrapper ul {
-	float: right;
+.user-options.nav-pills > li > a,
+.user-options.nav-pills > li > a:visited {
+color: #666;
+text-decoration: none;
+background-color: #ccc;
 }
-.account-wrapper .user-options li {
-	float: left;
-	list-style-type:none;
-	margin: 0px 0px 0px 20px;
+.user-options.nav-pills > li > a:hover,
+.user-options.nav-pills > li > a:focus {
+color: #fff;
+text-decoration: none;
+background-color: #000;
+}
+.badge {
+	background-color: #891e26;
+}
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:visited {
+    background-color: #891e26;
+	color: #fff;
 }
 @media (min-width: 768px) 
 {

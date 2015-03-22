@@ -53,15 +53,12 @@
   <div class="container account-wrapper">
   
   <nav>
- 
-    <ul class="user-options">
-        <li class="active"><a href="#"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a></li>
-        <li><a href="#requestChallenge"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Requests <span class="badge">5</span></a></li>
-        <li><a href="#contact"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> {{vm.userName}}</a></li>
-        <li><a ng-click="logout()" href="/logout"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Logout </a></li>
+    <ul class="nav nav-pills user-options pull-right">
+        <li class="active"><a href="#" role="button"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a></li>
+        <li><a href="#requestChallenge" role="button"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Requests <span class="badge">5</span></a></li>
+        <li><a href="#contact" role="button"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> {{vm.userName}}</a></li>
+        <li><a ng-click="logout()" href="/logout" role="button"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Logout </a></li>
     </ul>
-
-	</nav>
   </div><!-- end container -->
 
 <header ng-class="{'app-ready': vm.appReady}"></header>
