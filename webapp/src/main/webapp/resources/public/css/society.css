@@ -155,6 +155,12 @@ h2.form-signin-heading {
 	margin-top: 10px;
 	max-width: 1000px;
 }
+.user-options.nav-pills {
+	width: 100%;
+}
+.user-options.nav-pills > li {
+width: 49%;
+}
 .user-options.nav-pills > li > a,
 .user-options.nav-pills > li > a:visited {
 color: #666;
@@ -174,6 +180,7 @@ background-color: #000;
     background-color: #891e26;
 	color: #fff;
 }
+
 @media (min-width: 768px) 
 {
 .navbar-wrapper {
@@ -239,6 +246,13 @@ background-color: #000;
 	background-image: url(../images/sbb-logo-2.jpg);
 	background-size:autos;	
 }
+.user-options.nav-pills {
+	width: auto;
+}
+.user-options.nav-pills > li {
+width: auto;
+}
+
 @media (min-width: 992px) {
  
 }
