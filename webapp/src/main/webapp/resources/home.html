@@ -54,6 +54,7 @@
 <header ng-class="{'app-ready': vm.appReady}"></header>
 
 <main class="container not-ready" ng-class="{'app-ready': vm.appReady}" ng-cloak>
+	<div class="app-msg" style="max-width: 1000px;margin: 10px auto;">
     <tt-error-messages></tt-error-messages>
     <div class="info-messages"
          ng-style="{'opacity': vm.infoMessages.length > 0 ? 1 : 0, 'z-index': vm.infoMessages.length > 0 ? 10 : -10}">
@@ -68,7 +69,7 @@
         <img class="please-wait-spinner" src="/resources/img/loading.gif">
     </div>
     
-   
+   </div>
 
     <div class="container" style="max-width: 1000px;padding: 0px 0px;">
 
@@ -79,14 +80,14 @@
             <a href="#" type="button" class="btn btn-default active"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a>
       <div class="btn-group dropdown">
             <a href id="btnGroupVerticalDrop" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-            <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Requests <span class="badge">5</span>
+            <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Requests <span class="badge">5</span>
             <span class="caret"></span>
             <span class="sr-only"></span>
             </a>
                 <ul class="dropdown-menu col-xs-12" arialabelledby="btnGroupVericalDrop">
-                    <li><a href="#">Accepted <span class="badge">2</span></a></li>
-                    <li><a href="#">Pending <span class="badge">5</span></a></li>
-                    <li><a href="#">Denied <span class="badge">1</span></a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span> Accepted <span class="badge accepted">2</span></a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-minus-sign" aria-hidden="true"></span> Pending <span class="badge pending">5</span></a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-ban-circle" aria-hidden="true"></span> Declined <span class="badge denied">1</span></a></li>
                 </ul>
         </div><!--end dropdown -->
             <a href="#contact" type="button" class="btn btn-default"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> {{vm.userName}}</a>
@@ -96,10 +97,18 @@
 
 
   </div><!-- end container -->
-<div class="col-lg-10 col-xs-12">
- <button type="button" class="btn btn-default" aria-label="Left Align">
-      <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> <a href="#requestChallenge">Request Challenge</a>
+<div class="request col-lg-10 col-xs-12">
+ <button type="button" class="btn btn-default btn-lg" aria-label="Left Align">
+      <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> <a href="#requestChallenge">Request Challenge</a>
     </button>
+    
+     <button type="button" class="btn btn-default btn-lg" aria-label="Left Align">
+      <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> <a href="#requestChallenge">Accept</a>
+    </button>
+    <button type="button" class="btn btn-default btn-lg" aria-label="Left Align">
+      <span class="glyphicon glyphicon-ban-circle" aria-hidden="true"></span> <a href="#requestChallenge">Decline</a>
+    </button>
+
     </div>
         <div class="panel-group col-lg-10 col-xs-12" id="accordion" role="tablist" aria-multiselectable="true">
 
@@ -171,6 +180,26 @@
                                 </tr>
                                 </tbody>
                             </table>
+                        <!--suggested pagination structure -->
+                            <nav>
+                              <ul class="pager">
+                                <li>
+                                  <a ng-disabled="leaderCurrentPage == 0"
+                                    ng-click="leaderCurrentPage=leaderCurrentPage-1" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo; Previous</span>
+                                  </a>
+                                </li>
+                            <li style="padding: 0px 10px;"> Page: {{leaderCurrentPage+1}}/{{numberOfPages()}} </li>
+                                <li>
+                                  <a ng-disabled="leaderCurrentPage >= vm.leaderBoard.length/pageSize - 1"
+                                    ng-click="leaderCurrentPage=leaderCurrentPage+1" aria-label="Next">
+                                    <span aria-hidden="true">Next &raquo; </span>
+                                  </a>
+                                </li>
+                              </ul>
+                            </nav>
+                            
+                            
                             <button ng-disabled="leaderCurrentPage == 0"
                                     ng-click="leaderCurrentPage=leaderCurrentPage-1"> &#171
                             </button>
@@ -362,7 +391,39 @@
         </div>
     </div><!--end container -->
 </main>
-
+		
+           <article>
+               <section itemprop="articleBody"> 
+                    
+                    <footer class="footer" role="contentinfo">
+        
+                        <div id="inner-footer" class="container">
+                            
+                            <ul>
+    
+                              <li><a href="http://www.societybilliards.com/mapsdirections">Map + Directions</a></li>
+                            
+                              <li><a href="http://www.societybilliards.com/hoursrates">Hours + Rates</a></li>
+                            
+                              <li><a href="http://www.societybilliards.com/site-map">Site Map</a></li>
+                            
+                              <li class="footer-address">10 E 21 Street NY, NY 10010<br />(btw Broadway & 5th avenue)<br />t+ <a href="tel:+212.420.1000">212.420.1000</a><br /><a href="mailto:info@societybilliards.com">info@societybilliards.com</a></li>
+                            
+                              <li><a href="mailto:info@societybilliards.com">Employment</a></li>
+                            
+                              <li><a href="http://leagues.societybilliards.com">Login</a></li>
+                            
+                              <li><a href="http://www.societybilliards.com/contact">Contact</a></li>
+                        
+                        </ul>
+		                                    
+                        </div><!-- end inner-footer -->
+        
+                    </footer>
+                    
+                    </section>
+              </article>
+              
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script type="text/javascript"
         data-main="/resources/js/run-home-app"
