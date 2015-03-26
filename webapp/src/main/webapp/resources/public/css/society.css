@@ -155,31 +155,14 @@ h2.form-signin-heading {
 	margin-top: 10px;
 	max-width: 1000px;
 }
-.user-options.nav-pills {
-	width: 100%;
-}
-.user-options.nav-pills > li {
-width: 49%;
-}
-.user-options.nav-pills > li > a,
-.user-options.nav-pills > li > a:visited {
-color: #666;
-text-decoration: none;
-background-color: #ccc;
-}
-.user-options.nav-pills > li > a:hover,
-.user-options.nav-pills > li > a:focus {
-color: #fff;
-text-decoration: none;
-background-color: #000;
-}
+.account-wrapper .btn-group-vertical { max-width: 1000px;padding: 0px 0px; }
+.account-wrapper .btn-group-vertical a { text-align: left;}
+.account-wrapper .btn-group-vertical a:hover { background-color: #000; color: #fff;}
+.account-wrapper .btn-group-vertical li {width: 100%;}
 .badge {
 	background-color: #891e26;
 }
-.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:visited {
-    background-color: #891e26;
-	color: #fff;
-}
+
 
 @media (min-width: 768px) 
 {
@@ -245,12 +228,6 @@ background-color: #000;
 	height: 114px;
 	background-image: url(../images/sbb-logo-2.jpg);
 	background-size:autos;	
-}
-.user-options.nav-pills {
-	width: auto;
-}
-.user-options.nav-pills > li {
-width: auto;
 }
 
 @media (min-width: 992px) {

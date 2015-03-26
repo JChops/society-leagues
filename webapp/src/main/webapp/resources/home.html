@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="/resources/public/css/society.css">
 </head>
 
-<body id="leagueApp" ng-controller="HomeCtrl">
+<body id="leagueApp" class="full" ng-controller="HomeCtrl">
 
 <div class="navbar-wrapper">
       <div class="container">
@@ -70,23 +70,23 @@
     
    
 
-    <div class="container" style="max-width: 1000px;">
+    <div class="container" style="max-width: 1000px;padding: 0px 0px;">
 
 	  <div class="account-wrapper">
   
   <nav>
     <div class="btn-group-vertical col-lg-2 col-xs-12" role="group" aria-label="...">
-            <a href="#" type="button" class="btn btn-default"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a>
+            <a href="#" type="button" class="btn btn-default active"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a>
       <div class="btn-group dropdown">
             <a href id="btnGroupVerticalDrop" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
             <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Requests <span class="badge">5</span>
             <span class="caret"></span>
             <span class="sr-only"></span>
             </a>
-                <ul class="dropdown-menu col-xs-12" role="menu" arialabelledby="btnGroupVericalDrop">
-                    <li><a href="#">Accepted</a><span class="badge">2</span></li>
-                    <li><a href="#">Pending</a><span class="badge">5</span></li>
-                    <li><a href="#">Denied</a><span class="badge">1</span></li>
+                <ul class="dropdown-menu col-xs-12" arialabelledby="btnGroupVericalDrop">
+                    <li><a href="#">Accepted <span class="badge">2</span></a></li>
+                    <li><a href="#">Pending <span class="badge">5</span></a></li>
+                    <li><a href="#">Denied <span class="badge">1</span></a></li>
                 </ul>
         </div><!--end dropdown -->
             <a href="#contact" type="button" class="btn btn-default"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> {{vm.userName}}</a>
@@ -96,20 +96,21 @@
 
 
   </div><!-- end container -->
-
+<div class="col-lg-10 col-xs-12">
  <button type="button" class="btn btn-default" aria-label="Left Align">
       <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> <a href="#requestChallenge">Request Challenge</a>
     </button>
+    </div>
         <div class="panel-group col-lg-10 col-xs-12" id="accordion" role="tablist" aria-multiselectable="true">
 
             <div id="userStatsPanel" class="panel panel-default">
                 <div class="panel-heading" role="tab" id="headingUserStats">
-                   
+                   <h4 class="panel-title">
                         <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseUserStats"
                            aria-expanded="true" aria-controls="collapseUserStats">
-                           <h4 class="panel-title">  User Stats</h4>
+                            User Stats
                         </a>
-                 
+                 </h4>
                 </div>
                 <div id="collapseUserStats" class="panel-collapse collapse in" role="tabpanel"
                      aria-labelledby="headingUserStats">
@@ -122,7 +123,7 @@
                                     <th>Wins</th>
                                     <th>Loses</th>
                                     <th>Racks</th>
-                                    <th>Percentage</th>
+                                    <th>%</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -154,7 +155,7 @@
                      aria-labelledby="headingLeader">
                     <div class="list-group">
                         <div id="leader">
-                            <table class="table">
+                            <table class="table table-striped">
                                 <thead>
                                 <tr>
                                     <th>Name</th>
@@ -196,7 +197,7 @@
                      aria-labelledby="headingUserMatches">
                     <div class="list-group">
                         <div id="user-match-history">
-                            <table class="table">
+                            <table class="table table-striped">
                                 <thead>
                                 <tr>
                                     <th>Opponent</th>
@@ -221,7 +222,7 @@
                                 </tr>
                                 </tbody>
                             </table>
-                            <button ng-disabled="allResultsCurrentPage == 0"
+                            <button ng-disabled="resultsCurrentPage == 0"
                                     ng-click="resultsCurrentPage=resultsCurrentPage-1"> &#171
                             </button>
                             {{resultsCurrentPage+1}}/{{resultsNumberOfPages()}}
@@ -246,7 +247,7 @@
                      aria-labelledby="headingPendingChallenges">
                     <div class="list-group">
                         <div id="pending">
-                            <table class="table">
+                            <table class="table table-striped">
                                 <thead>
                                 <tr>
                                     <th>Challenger</th>
@@ -323,7 +324,7 @@
                      aria-labelledby="headingAllResultsCollapse">
                     <div class="list-group">
                         <div id="results">
-                            <table class="table">
+                            <table class="table table-striped">
                                 <thead>
                                 <tr>
                                     <th>Challenger</th>
